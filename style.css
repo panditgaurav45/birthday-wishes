@@ -1,0 +1,1100 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    background:#020412;
+    color:#fff;
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+body{
+    background:
+    radial-gradient(circle at top,#14213d,#020412 70%);
+    min-height:100vh;
+}
+
+/* Stars */
+
+.stars{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 2px,transparent 2px);
+
+    background-size:
+    120px 120px,
+    180px 180px,
+    260px 260px;
+
+    animation:starsMove 120s linear infinite;
+
+    opacity:.8;
+
+    z-index:-3;
+}
+
+@keyframes starsMove{
+
+from{
+background-position:0 0,0 0,0 0;
+}
+
+to{
+background-position:
+-1000px 600px,
+600px -800px,
+1200px 700px;
+}
+
+}
+
+/* Moon */
+
+.moon{
+
+position:fixed;
+
+top:50px;
+
+right:80px;
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle at 30% 30%,
+#fff,
+#f7f0b5 65%,
+#f0d979);
+
+box-shadow:
+
+0 0 30px #fff,
+
+0 0 80px #ffe97b,
+
+0 0 140px #ffe97b;
+
+z-index:-2;
+
+animation:moonGlow 3s ease-in-out infinite alternate;
+
+}
+
+@keyframes moonGlow{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.05);
+
+}
+
+}
+
+/* ==========================
+INTRO
+========================== */
+
+#intro{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+#intro h3{
+
+font-size:28px;
+
+font-weight:500;
+
+color:#ffd54f;
+
+letter-spacing:2px;
+
+margin-bottom:20px;
+
+animation:fadeDown 1s;
+
+}
+
+#intro h1{
+
+font-size:75px;
+
+font-weight:900;
+
+line-height:1.2;
+
+}
+
+#intro h1 span{
+
+color:#ff4d8d;
+
+text-shadow:
+
+0 0 20px #ff4d8d,
+
+0 0 40px #ff4d8d;
+
+}
+
+#intro p{
+
+margin-top:30px;
+
+font-size:22px;
+
+line-height:1.8;
+
+opacity:.9;
+
+}
+
+#startBtn{
+
+margin-top:50px;
+
+padding:18px 45px;
+
+font-size:20px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(45deg,#ff4d8d,#ff9d00);
+
+color:white;
+
+transition:.4s;
+
+box-shadow:
+
+0 0 20px #ff4d8d;
+
+}
+
+#startBtn:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+box-shadow:
+
+0 0 40px #ff4d8d,
+
+0 0 70px orange;
+
+}
+
+/* ==========================
+Gift
+========================== */
+
+#giftSection{
+
+display:none;
+
+height:100vh;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+}
+
+#giftSection h2{
+
+font-size:40px;
+
+margin-bottom:60px;
+
+}
+
+.gift-box{
+
+position:relative;
+
+width:220px;
+
+height:220px;
+
+cursor:pointer;
+
+transition:.5s;
+
+animation:floatGift 2s ease-in-out infinite;
+
+}
+
+.gift-box:hover{
+
+transform:scale(1.08);
+
+}
+
+.box{
+
+position:absolute;
+
+bottom:0;
+
+width:220px;
+
+height:150px;
+
+background:#ff2f6d;
+
+border-radius:12px;
+
+box-shadow:
+
+0 0 30px hotpink;
+
+}
+
+.lid{
+
+position:absolute;
+
+top:0;
+
+width:220px;
+
+height:60px;
+
+background:#ff6fa2;
+
+border-radius:12px;
+
+transition:.8s;
+
+transform-origin:bottom;
+
+}
+
+.gift-box.open .lid{
+
+transform:rotate(-40deg) translateY(-60px);
+
+}
+
+@keyframes floatGift{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ==========================
+MAIN CONTENT
+========================== */
+
+#mainContent{
+
+display:none;
+
+padding:70px 20px;
+
+text-align:center;
+
+}
+
+.birthdayTitle{
+
+font-size:65px;
+
+color:#ffe66d;
+
+text-shadow:
+
+0 0 20px gold,
+
+0 0 50px gold;
+
+margin-bottom:20px;
+
+}
+
+.name{
+
+font-size:45px;
+
+margin-bottom:40px;
+
+color:#ff7eb3;
+
+}
+
+.message{
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+
+0 0 25px rgba(255,255,255,.1);
+
+}
+
+.message p{
+
+font-size:23px;
+
+line-height:2;
+
+}
+/* ==========================
+   PHOTO GALLERY
+========================== */
+
+.gallery{
+    width:90%;
+    max-width:900px;
+    height:560px;
+    margin:60px auto;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+
+    padding:18px;
+
+    box-shadow:
+    0 0 30px rgba(255,77,141,.35),
+    inset 0 0 20px rgba(255,255,255,.1);
+}
+
+
+.gallery img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    border-radius:22px;
+
+    display:none;
+
+    animation:
+    imageShow 1.2s ease;
+
+}
+
+
+.gallery img.active{
+
+    display:block;
+
+}
+
+
+@keyframes imageShow{
+
+0%{
+    opacity:0;
+    transform:scale(.85);
+}
+
+50%{
+    opacity:1;
+    transform:scale(1.03);
+}
+
+100%{
+    transform:scale(1);
+}
+
+}
+
+
+/* Buttons */
+
+.controls{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin-top:25px;
+
+}
+
+
+.controls button{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+border:none;
+
+cursor:pointer;
+
+font-size:25px;
+
+color:white;
+
+background:
+linear-gradient(45deg,#ff4d8d,#ff9800);
+
+box-shadow:
+0 0 20px #ff4d8d;
+
+transition:.4s;
+
+}
+
+
+.controls button:hover{
+
+transform:scale(1.15) rotate(10deg);
+
+}
+
+@keyframes fadeSlide{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ==========================
+   CONTROLS
+========================== */
+
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:25px;
+}
+
+.controls button{
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:22px;
+    color:#fff;
+    background:linear-gradient(45deg,#ff4d8d,#ff9800);
+    box-shadow:0 0 20px rgba(255,77,141,.5);
+    transition:.35s;
+}
+
+.controls button:hover{
+    transform:translateY(-6px) scale(1.08);
+}
+
+/* ==========================
+   MUSIC BUTTON
+========================== */
+
+.musicBox{
+    margin-top:60px;
+}
+
+#musicBtn{
+    border:none;
+    cursor:pointer;
+    padding:16px 36px;
+    border-radius:40px;
+    font-size:18px;
+    color:#fff;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    transition:.4s;
+    box-shadow:0 0 20px rgba(0,114,255,.5);
+}
+
+#musicBtn:hover{
+    transform:scale(1.05);
+}
+
+/* ==========================
+   WISH CARD
+========================== */
+
+.wishCard{
+    max-width:900px;
+    margin:70px auto;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.wishCard h2{
+    color:#ffd54f;
+    margin-bottom:25px;
+    font-size:38px;
+}
+
+.wishCard p{
+    font-size:21px;
+    line-height:2;
+}
+
+/* ==========================
+   FINAL MESSAGE
+========================== */
+
+.finalMessage{
+    margin:90px auto;
+}
+
+.finalMessage h1{
+    font-size:60px;
+    color:#ffe66d;
+    text-shadow:0 0 25px gold;
+}
+
+.finalMessage h2{
+    margin-top:20px;
+    font-size:42px;
+    color:#ff6fa2;
+}
+
+.finalMessage p{
+    margin-top:30px;
+    font-size:22px;
+    line-height:2;
+}
+
+.finalMessage span{
+    color:#ffd54f;
+    font-weight:700;
+    font-size:28px;
+}
+
+/* ==========================
+   HEARTS
+========================== */
+
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    bottom:-30px;
+    color:#ff4d8d;
+    font-size:22px;
+    animation:heartFloat linear forwards;
+}
+
+@keyframes heartFloat{
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+    15%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh) scale(1.4);
+        opacity:0;
+    }
+}
+
+/* ==========================
+   BALLOONS
+========================== */
+
+#balloons{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.balloon{
+    position:absolute;
+    bottom:-150px;
+    width:60px;
+    height:75px;
+    border-radius:50%;
+    animation:balloonUp linear forwards;
+}
+
+.balloon::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:75px;
+    width:2px;
+    height:90px;
+    background:#ddd;
+}
+
+@keyframes balloonUp{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-130vh);
+    }
+}/* ==========================
+   FIREWORKS CANVAS
+========================== */
+
+#fireworks{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:999;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+    font-size:18px;
+    color:#ddd;
+    letter-spacing:1px;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050818;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#ff4d8d,#ff9800);
+    border-radius:20px;
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #ffd54f;
+    }
+    to{
+        text-shadow:
+        0 0 20px #ffd54f,
+        0 0 40px gold,
+        0 0 70px orange;
+    }
+}
+
+.birthdayTitle{
+    animation:glow 2s infinite alternate;
+}
+
+.name{
+    animation:fadeDown 1.5s;
+}
+
+.message,
+.gallery,
+.wishCard,
+.finalMessage{
+    animation:fadeUp 1.2s;
+}
+
+/* ==========================
+   GLASS HOVER
+========================== */
+
+.message:hover,
+.gallery:hover,
+.wishCard:hover{
+    transform:translateY(-8px);
+    transition:.4s;
+    box-shadow:0 20px 45px rgba(255,255,255,.15);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+#intro h1{
+    font-size:56px;
+}
+
+.birthdayTitle{
+    font-size:48px;
+}
+
+.name{
+    font-size:34px;
+}
+
+.gallery img{
+    height:420px;
+}
+
+.message p,
+.wishCard p{
+    font-size:19px;
+}
+
+}
+
+@media(max-width:768px){
+
+#intro h1{
+    font-size:42px;
+}
+
+#intro h3{
+    font-size:20px;
+}
+
+#intro p{
+    font-size:18px;
+}
+
+#startBtn{
+    padding:15px 32px;
+    font-size:18px;
+}
+
+.gift-box{
+    transform:scale(.8);
+}
+
+.birthdayTitle{
+    font-size:36px;
+}
+
+.name{
+    font-size:28px;
+}
+
+.gallery img{
+    height:300px;
+}
+
+.controls button{
+    width:52px;
+    height:52px;
+}
+
+.wishCard{
+    padding:25px;
+}
+
+.wishCard h2{
+    font-size:30px;
+}
+
+.wishCard p{
+    font-size:17px;
+}
+
+.finalMessage h1{
+    font-size:42px;
+}
+
+.finalMessage h2{
+    font-size:30px;
+}
+
+.finalMessage p{
+    font-size:18px;
+}
+
+}
+
+@media(max-width:480px){
+
+#intro h1{
+    font-size:34px;
+}
+
+.gallery img{
+    height:230px;
+}
+
+.message{
+    padding:20px;
+}
+
+.message p{
+    font-size:16px;
+    line-height:1.8;
+}
+
+#musicBtn{
+    width:100%;
+}
+
+}
+/* ==========================
+   MEMORY WALL
+========================== */
+
+.memory-wall{
+    max-width:1100px;
+    margin:60px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.memory{
+
+    width:100%;
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+
+}
+
+.memory:hover{
+
+    transform:scale(1.05) rotate(-2deg);
+
+    box-shadow:
+    0 15px 40px rgba(255,255,255,.2);
+
+}
+
+/* Preview */
+
+#preview{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+#preview img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:20px;
+
+}
+
+#close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:35px;
+
+    font-size:45px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+/* ==========================
+   MOBILE RESPONSIVE SLIDER
+========================== */
+
+@media(max-width:600px){
+
+    .gallery{
+
+        width:94%;
+
+        height:380px;
+
+        padding:10px;
+
+        border-radius:20px;
+
+    }
+
+
+    .gallery img{
+
+        border-radius:15px;
+
+    }
+
+
+    .controls{
+
+        margin-top:15px;
+
+        gap:15px;
+
+    }
+
+
+    .controls button{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:20px;
+
+    }
+
+}
+
+/* ==========================
+   END
+========================== */
